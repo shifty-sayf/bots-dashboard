@@ -22,7 +22,7 @@ type Robot = {
   lights: "OK" | "Service Soon" | "Not Working";
 };
 
-export const columns: ColumnDef<Robot>[] = [
+const columns: ColumnDef<Robot>[] = [
   {
     accessorKey: "robotId",
     header: "RobotId",

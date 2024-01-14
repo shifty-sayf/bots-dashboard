@@ -2,6 +2,7 @@ import Card, { CardContent, CardProps } from "@/components/Card";
 import PageTitle from "@/components/PageTitle";
 import Image from "next/image";
 import { Globe2, Bot, TrainTrack, Activity } from "lucide-react";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 const cardData: CardProps[] = [
   {
@@ -46,7 +47,14 @@ export default function Home() {
         ))}
       </section>
       <section className="grid grid-cols-1 gap-4 transition-all lg:grid-cols-2">
-        <CardContent>asdfasd</CardContent>
+        <CardContent>
+          <p className="p-4 font-semibold">Map</p>
+          {/* <MapContainer center={[48.8566, 2.3522]} zoom={}>
+            <TileLayer 
+              url="" 
+            />
+          </MapContainer> */}
+        </CardContent>
       </section>
     </div>
   );

@@ -1,16 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Nav } from "./ui/nav";
 import { LayoutDashboard, TreePine, Bot, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 
 import { useWindowWidth } from "@react-hook/window-size";
-import { only } from "node:test";
 
 type Props = {};
 
 export default function SideNavbar({}: Props) {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
   const onlyWidth = useWindowWidth();
   const mobileWidth = onlyWidth < 768;
@@ -19,9 +19,13 @@ export default function SideNavbar({}: Props) {
     setIsCollapsed(!isCollapsed);
   }
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className="relative min-w-[80px] border-r px-3 pb-10 pt-24">
-      {!mobileWidth && (
+      {isClient && !mobileWidth && (
         <div className="absolute right-[-20px] top-7">
           <Button
             onClick={toggleSidebar}

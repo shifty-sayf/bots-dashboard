@@ -38,7 +38,43 @@ export default function CustomMap(props: CustomMapProps) {
         position={[51.505, -0.09]}
       >
         <Popup>
+          Robot #123120. <br /> Battery: 53%. 4G: OK
+        </Popup>
+      </Marker>
+      <Marker
+        icon={
+          new L.Icon({
+            iconUrl: MarkerIcon.src,
+            iconRetinaUrl: MarkerIcon.src,
+            iconSize: [25, 41],
+            iconAnchor: [12.5, 41],
+            popupAnchor: [0, -41],
+            shadowUrl: MarkerShadow.src,
+            shadowSize: [41, 41],
+          })
+        }
+        position={[51.45, -0.092]}
+      >
+        <Popup>
           Robot #123123. <br /> Battery: 86%. 4G: OK
+        </Popup>
+      </Marker>
+      <Marker
+        icon={
+          new L.Icon({
+            iconUrl: MarkerIcon.src,
+            iconRetinaUrl: MarkerIcon.src,
+            iconSize: [25, 41],
+            iconAnchor: [12.5, 41],
+            popupAnchor: [0, -41],
+            shadowUrl: MarkerShadow.src,
+            shadowSize: [41, 41],
+          })
+        }
+        position={[51.6, -0.085]}
+      >
+        <Popup>
+          Robot #123124. <br /> Battery: 49%. 4G: OK
         </Popup>
       </Marker>
     </MapContainer>

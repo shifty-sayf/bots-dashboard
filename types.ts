@@ -1,3 +1,5 @@
+type DeviceStatus = "OK" | "Service Soon" | "Not Working";
+
 export type Robot = {
   robotId: string;
   robotName: string;
@@ -7,10 +9,10 @@ export type Robot = {
   battery: number;
   distance: number;
   testDrives: number;
-  frontCam: "OK" | "Service Soon" | "Not Working";
-  rearCam: "OK" | "Service Soon" | "Not Working";
-  mic: "OK" | "Service Soon" | "Not Working";
-  audio: "OK" | "Service Soon" | "Not Working";
-  "4g": "OK" | "Service Soon" | "Not Working";
-  lights: "OK" | "Service Soon" | "Not Working";
+  frontCam: DeviceStatus;
+  rearCam: DeviceStatus;
+  mic: DeviceStatus;
+  audio: DeviceStatus;
+  "4g": DeviceStatus;
+  lights: DeviceStatus;
 };

@@ -30,6 +30,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { downloadToExcel } from "@/lib/xlsx";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -76,6 +77,9 @@ export function RobotsTable<TData, TValue>({
           }
           className="max-w-sm"
         />
+        <Button onClick={() => downloadToExcel()} className="ml-4 bg-green-600">
+          Export to Excel
+        </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">

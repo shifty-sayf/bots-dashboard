@@ -2,10 +2,6 @@
 
 import PageTitle from "@/components/PageTitle";
 import { RobotsTable } from "@/components/RobotsTable";
-import { Button } from "@/components/ui/button";
-import { Robot } from "@/types";
-import { ColumnDef } from "@tanstack/react-table";
-import { ArrowUpDown } from "lucide-react";
 import React from "react";
 import { columns } from "./columns";
 import { data } from "./data";

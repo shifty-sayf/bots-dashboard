@@ -2,7 +2,9 @@
 
 import PageTitle from "@/components/PageTitle";
 import { RobotsTable } from "@/components/RobotsTable";
+import { Button } from "@/components/ui/button";
 import { ColumnDef } from "@tanstack/react-table";
+import { ArrowUpDown } from "lucide-react";
 import React from "react";
 
 type Robot = {
@@ -25,11 +27,31 @@ type Robot = {
 const columns: ColumnDef<Robot>[] = [
   {
     accessorKey: "robotId",
-    header: "RobotId",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Id
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "robotName",
-    header: "RobotName",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Name
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       return (
         <div className="flex gap-2 items-center">
@@ -47,7 +69,17 @@ const columns: ColumnDef<Robot>[] = [
   },
   {
     accessorKey: "country",
-    header: "Country",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Country
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "lat",
@@ -59,15 +91,45 @@ const columns: ColumnDef<Robot>[] = [
   },
   {
     accessorKey: "battery",
-    header: "Batt %",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Batt %
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "distance",
-    header: "Dist KM",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Dist KM
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "testDrives",
-    header: "# Test Drives",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          # Test Drives
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
   },
   {
     accessorKey: "frontCam",

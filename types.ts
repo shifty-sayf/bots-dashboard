@@ -16,3 +16,8 @@ export type Robot = {
   "4g": DeviceStatus;
   lights: DeviceStatus;
 };
+
+export type Country = {
+  name: string;
+  children: { name: string }[];
+};

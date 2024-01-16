@@ -1,4 +1,4 @@
-import { Robot } from "@/types";
+import { Country, Robot } from "@/types";
 
 export const data: Robot[] = [
   {
@@ -242,3 +242,26 @@ export const data: Robot[] = [
     lights: "OK",
   },
 ];
+
+const transformData = (data: Robot[]): any => {
+  const result = { name: "Countries", children: [] as Country[] };
+
+  data.forEach((robot) => {
+    const country: Country | undefined = result.children.find(
+      (child) => child.name === robot.country
+    );
+
+    if (country) {
+      country.children.push({ name: robot.robotName });
+    } else {
+      result.children.push({
+        name: robot.country,
+        children: [{ name: robot.robotName }],
+      });
+    }
+  });
+
+  return result;
+};
+
+export const transformedData = transformData(data);

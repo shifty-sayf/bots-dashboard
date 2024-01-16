@@ -78,7 +78,7 @@ export default function TreeMapPage() {
       <PageTitle title="Tree Map" className="text-nowrap" />
       <svg
         ref={svgRef}
-        className="ml-16 overflow-visible"
+        className="ml-16 overflow-visible max-w-xl"
         viewBox="0 0 1024 1000"
       />
     </div>

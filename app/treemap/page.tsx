@@ -73,7 +73,7 @@ export default function TreeMapPage() {
     <div
       ref={wrapperRef}
       id="chart"
-      className="flex flex-col gap-10 w-full h-full overflow-auto"
+      className="flex flex-col gap-10 w-full h-full overflow-visible"
     >
       <PageTitle title="Tree Map" className="text-nowrap" />
       <svg

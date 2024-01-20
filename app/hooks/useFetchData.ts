@@ -17,7 +17,7 @@ export function useFetchData(): ViewModel {
     fetchData();
     const fetchFileData = async () => {
       // call the streamed data from the robots/api/route.ts
-      const response = await fetch("robots/api");
+      const response = await fetch("robots/api", { cache: "no-cache" });
       const stream = response.body;
 
       // check if stream is readable

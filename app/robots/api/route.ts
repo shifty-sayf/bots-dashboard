@@ -18,7 +18,7 @@ function iteratorToStream(iterator: any) {
 
 export async function GET() {
   // Ensure the data.json file is created
-  await fetchData();
+  // await fetchData();
 
   const readStream = fs.createReadStream("public/data.json");
   const iterator = readStream[Symbol.asyncIterator]();

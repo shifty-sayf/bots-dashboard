@@ -41,23 +41,29 @@ Given the following [API](https://frodo-bots-api.onrender.com/data), I assumed:
 - There would not be any direct querying to the database
 - The data would be fetched in one request
 
-## Rationale for Tanstack Query
+## Unveiling the Why Behind Streaming Big Data
 
-Key considerations included:
+As I worked on a plan for fetching data in this app, I carefully considered how to make your experience seamless, especially when handling colossal datasets. Here's the rundown on why I opted for streaming and chunking the data:
 
-- Ensure a seamless user experience with constraints of fetching large dataset.
-- Pagination for the initial load server-side, displaying only necessary data for users to get started.
-- Lazy loading for additional data, if and when users interact with page.
-- Skeleton loading to give users visual feedback while waiting for data to load. This reduces the perception of lengthy loading times.
-- Export to excel option gives user download option, and caters to their potential need to work with the entire dataset offline.
-- Cache initial subset
-- Implement user-friendly error messages and error handling, ensuring to communicate to users when there are issues fetching, updating or when to guide them on possible next steps.
+**Implemented:**
 
-**Hypothesis**: Tanstack Query is an ideal lightweight tool for handling state and caching when building in rapid iterations.
+- **Pagination:** I present precisely what you need when you first load the page—no overwhelming data dumps here.
+- **Lazy Loading:** Additional data arrives only when you request it, triggered by your interactions with the page. Your command is my delight!
+- **Export to Excel:** If you want the entire dataset offline, you've got the green light to download it. Consider it done.
+- **User-Friendly Error Handling:** Should anything go awry, I've got your back with clear error messages to guide you through the rough patches.
 
-## Future feature editions
+**On My To-Do List:**
 
-- Cache based on user interactions, implement optimistic updates to prioritize expected behaviour via immediate UI updates while asynchronously updating backend.
-- Periodic background updates - assuming robots battery may deplete every 4 hours, assume a need to update every hour.
-- User feedback such as toast notifications, to reassure users that the application is keeping the data current.
-- Performance Monitoring tools to identify bottlenecks or areas for improvement in data fetching and rendering. This ensures continuous optimisation for a smooth UX.
+- **Skeleton Loading:** Ensuring you see something on the screen while I load the heavy stuff.
+- **Caching Initial Subset:** Storing a portion of the data to speed things up on your next visit.
+
+**Hypothesis**: Streaming is the go-to solution for handling hefty datasets like a seasoned pro.
+
+## Upcoming Features: Where Form Meets Function
+
+As I continue refining this app, I'm contemplating some exciting additions to elevate your experience:
+
+- **Cached User Interactions:** Accelerating performance based on your usage patterns, ensuring a snappy and responsive interface.
+- **Periodic Background Updates:** Picture your robot's battery as a cookie that lasts 4 hours—I'll refresh the data jar every hour.
+- **User Feedback Mechanisms:** Keeping you informed with friendly notifications, assuring you that I'm vigilant in maintaining your data's freshness.
+- **Performance Monitoring Tools:** Behind the scenes, I'll be monitoring for anything that could potentially slow me down. My commitment is to keep things smooth and efficient for you.

@@ -28,7 +28,9 @@ export default function RobotsPage() {
   return (
     <div className="flex flex-col gap-5 w-full">
       <PageTitle title="Robots" />
-      <RobotsTable columns={columns} data={robots} />
+      <Suspense fallback={<div>LOADING!</div>}>
+        <RobotsTable columns={columns} data={robots} />
+      </Suspense>
     </div>
   );
 }

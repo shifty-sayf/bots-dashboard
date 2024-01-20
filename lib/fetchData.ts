@@ -4,7 +4,7 @@ import fs from "fs";
 
 export async function fetchData() {
   const apiEndpoint = "https://frodo-bots-api.onrender.com/data";
-  const outputFile = "data.json";
+  const outputFile = "public/data.json";
 
   fetch(apiEndpoint)
     .then((response) => {
@@ -20,7 +20,7 @@ export async function fetchData() {
       // Parse the JSON data
       const jsonData = JSON.parse(jsonString);
 
-      // Write the parsed JSON data to the output file
+      // Write the parsed JSON data to the output file in the 'public' folder
       fs.writeFileSync(outputFile, JSON.stringify(jsonData, null, 2), "utf8");
 
       console.log("Parsed JSON data written to", outputFile);

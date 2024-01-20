@@ -20,7 +20,7 @@ export async function GET() {
   // Ensure the data.json file is created
   await fetchData();
 
-  const readStream = fs.createReadStream("data.json");
+  const readStream = fs.createReadStream("public/data.json");
   const iterator = readStream[Symbol.asyncIterator]();
 
   const stream = iteratorToStream(iterator);
